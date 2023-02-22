@@ -6,21 +6,27 @@ import java.awt.*;
 
 public class HlavniProgram {
     private Turtle turtle = new Turtle();
-    private final Color SNOWMAN_BLUE = new Color (51, 153, 255);
-    private final Color CONE_BROWN = new Color (102, 51, 0);
+    private final Color SNOWMAN_BLUE = new Color(51, 153, 255);
+    private final Color CONE_BROWN = new Color(102, 51, 0);
 
     public void start() {
-        //drawVanillaIceCream();
+          // drawVanillaIceCream();
+          // drawSnowman();
 
-        turtle.setLocation(500,200);
-        drawCircle(100, SNOWMAN_BLUE);
-        turtle.setLocation(turtle.getX() + 40, turtle.getY() + 50);
-        turtle.turnRight(90);
-        drawCircle(130, SNOWMAN_BLUE);
-        turtle.setLocation(turtle.getX() + 95, turtle.getY() + 45);
-        drawSnowmansHand();
-        turtle.setLocation(turtle.getX() - 175, turtle.getY());
-        drawSnowmansHand();
+           turtle.setLocation(1350, 200);
+           turtle.turnRight(90);
+           drawRectangle(150,250, Color.RED);
+           turtle.setLocation(1350, 450);
+           turtle.turnLeft(90);
+           drawCircle(153, Color.BLACK);
+           turtle.setLocation(1250,450);
+           turtle.turnRight(90);
+           drawSmallWheel();
+           turtle.setLocation(1150, 450);
+           drawSmallWheel();
+
+
+
 
     }
 
@@ -34,7 +40,7 @@ public class HlavniProgram {
 
     public void drawIsoscelesTriangle(double size, Color color) {
         turtle.setPenColor(color);
-        double sizeOfLongestSide = Math.sqrt(2 * Math.pow((double) size, 2));
+        int sizeOfLongestSide = (int) Math.sqrt(2 * Math.pow(size, 2));
         turtle.move(size);
         turtle.turnLeft(135);
         turtle.move(sizeOfLongestSide);
@@ -59,7 +65,7 @@ public class HlavniProgram {
     public void drawCircle(double diameter, Color color) {
         turtle.setPenColor(color);
         double perimeter = Math.PI * diameter;
-        double movement = perimeter/20;
+        double movement = perimeter / 20;
         for (int i = 0; i < 20; i++) {
             turtle.move(movement);
             turtle.turnRight(18);
@@ -67,19 +73,52 @@ public class HlavniProgram {
     }
 
     private void drawVanillaIceCream() {
-        turtle.setLocation(200,200);
+        //ice cream
+        turtle.setLocation(200, 200);
         drawCircle(190, Color.YELLOW);
-        turtle.setLocation(turtle.getX() + 5, turtle.getY()+20);
+        //cone
+        turtle.setLocation(turtle.getX() + 5, turtle.getY() + 20);
         turtle.turnRight(90);
         drawEquilateralTriangle(180, CONE_BROWN);
+        turtle.turnLeft(90);
     }
 
     private void drawSnowman() {
+        //variables to determinate the position
+        double snowmanMainXLocation = 650;
+        double snowmanMainYlocation = 250;
+        //head
+        turtle.setLocation(snowmanMainXLocation, snowmanMainYlocation);
+        turtle.turnRight(90);
+        drawCircle(100, SNOWMAN_BLUE);
+        //upper body
+        turtle.setLocation(snowmanMainXLocation, turtle.getY() + 100);
+        drawCircle(130, SNOWMAN_BLUE);
+        //arms
+        turtle.setLocation(turtle.getX() + 95, turtle.getY() + 45);
+        drawSnowmansHand();
+        turtle.setLocation(turtle.getX() - 175, turtle.getY());
+        drawSnowmansHand();
+        //lower body
+        turtle.setLocation(snowmanMainXLocation, turtle.getY() + 85);
+        drawCircle(250, SNOWMAN_BLUE);
+        //nose
+        turtle.setLocation(snowmanMainXLocation, snowmanMainYlocation + 40);
+        turtle.turnRight(90);
+        drawEquilateralTriangle(25, Color.ORANGE);
+        turtle.turnRight(180);
+    }
+
+    private void drawSnowmansHand() {
+        drawCircle(40, SNOWMAN_BLUE);
+    }
+
+    private void drawLocomotive() {
 
     }
 
-    private void drawSnowmansHand(){
-        drawCircle(40, SNOWMAN_BLUE);
+    private void drawSmallWheel(){
+        drawCircle(50, Color.BLACK);
     }
 
     public static void main(String[] args) {
