@@ -99,9 +99,11 @@ public class HlavniProgram {
     }
 
     private void drawLocomotive() {
+        //cab
         turtle.setLocation(1350, 200);
         turtle.turnRight(90);
         drawRectangle(150, 250, Color.RED);
+        //wheels
         turtle.setLocation(turtle.getX(), turtle.getY() + 250);
         turtle.turnLeft(90);
         drawCircle(153, Color.BLACK);
@@ -110,6 +112,7 @@ public class HlavniProgram {
         drawSmallWheel();
         turtle.setLocation(turtle.getX() - 100, turtle.getY());
         drawSmallWheel();
+        //front part
         turtle.turnLeft(90);
         turtle.setLocation(turtle.getX() - 50, turtle.getY() - 5);
         drawRectangle(130, 240, Color.RED);
