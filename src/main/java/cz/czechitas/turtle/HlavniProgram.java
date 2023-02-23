@@ -10,24 +10,9 @@ public class HlavniProgram {
     private final Color CONE_BROWN = new Color(102, 51, 0);
 
     public void start() {
-          // drawVanillaIceCream();
-          // drawSnowman();
-
-           turtle.setLocation(1350, 200);
-           turtle.turnRight(90);
-           drawRectangle(150,250, Color.RED);
-           turtle.setLocation(1350, 450);
-           turtle.turnLeft(90);
-           drawCircle(153, Color.BLACK);
-           turtle.setLocation(1250,450);
-           turtle.turnRight(90);
-           drawSmallWheel();
-           turtle.setLocation(1150, 450);
-           drawSmallWheel();
-
-
-
-
+        drawVanillaIceCream();
+        drawSnowman();
+        drawLocomotive();
     }
 
     public void drawEquilateralTriangle(double size, Color color) {
@@ -114,10 +99,25 @@ public class HlavniProgram {
     }
 
     private void drawLocomotive() {
-
+        turtle.setLocation(1350, 200);
+        turtle.turnRight(90);
+        drawRectangle(150, 250, Color.RED);
+        turtle.setLocation(turtle.getX(), turtle.getY() + 250);
+        turtle.turnLeft(90);
+        drawCircle(153, Color.BLACK);
+        turtle.setLocation(turtle.getX() - 100, turtle.getY() + 5);
+        turtle.turnRight(90);
+        drawSmallWheel();
+        turtle.setLocation(turtle.getX() - 100, turtle.getY());
+        drawSmallWheel();
+        turtle.turnLeft(90);
+        turtle.setLocation(turtle.getX() - 50, turtle.getY() - 5);
+        drawRectangle(130, 240, Color.RED);
+        turtle.setLocation(turtle.getX(), turtle.getY() + 50);
+        drawIsoscelesTriangle(140, Color.BLACK);
     }
 
-    private void drawSmallWheel(){
+    private void drawSmallWheel() {
         drawCircle(50, Color.BLACK);
     }
 
