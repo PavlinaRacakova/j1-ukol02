@@ -70,7 +70,7 @@ public class HlavniProgram {
 
     private void drawSnowman() {
         //variables to determinate the position
-        double snowmanMainXLocation = 650;
+        double snowmanMainXLocation = 660;
         double snowmanMainYlocation = 250;
         //head
         turtle.setLocation(snowmanMainXLocation, snowmanMainYlocation);
