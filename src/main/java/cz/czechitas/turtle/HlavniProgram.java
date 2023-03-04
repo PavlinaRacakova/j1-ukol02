@@ -25,7 +25,7 @@ public class HlavniProgram {
 
     public void drawIsoscelesTriangle(double size, Color color) {
         turtle.setPenColor(color);
-        int sizeOfLongestSide = (int) Math.sqrt(2 * Math.pow(size, 2));
+        double sizeOfLongestSide = Math.sqrt(2 * Math.pow(size, 2));
         turtle.move(size);
         turtle.turnLeft(135);
         turtle.move(sizeOfLongestSide);
